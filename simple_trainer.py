@@ -90,7 +90,7 @@ def main(epochs: int = 10):
     unet.enable_xformers_memory_efficient_attention()
 
     unet.train()
-    if unfreeze_all:
+    if not unfreeze_all:
         unet.requires_grad_(False)
         for name, param in unet.named_parameters():
             if 'temporal_conv' in name:
