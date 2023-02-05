@@ -149,9 +149,9 @@ def main(epochs: int = 10):
 
     progress_bar = tqdm(range(max_train_steps))
     global_step = 0
-    tqdm.write(max_train_steps)
-    tqdm.write(dataset_size)
-    tqdm.write(epochs)
+    tqdm.write(str(max_train_steps))
+    tqdm.write(str(dataset_size))
+    tqdm.write(str(epochs))
 
     for epoch in range(epochs):
         for step, batch in enumerate(encoded):
